@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nuestra Historia ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Georgia', serif;
+    background: #f6f2ec;
+}
+
+/* CONTENEDOR RESPONSIVE */
+.card {
+    width: 100%;
+    max-width: 420px;
+    margin: auto;
+    padding: 15px;
+    text-align: center;
+}
+.player img {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 10px;
+}
+
+/* SOLO EN PC */
+@media (min-width: 600px) {
+    .card {
+        margin-top: 20px;
+        border-radius: 20px;
+        background: white;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+}
+
+/* PLAYER */
+/* INFO */
+.info {
+    text-align: left;
+}
+
+.song {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.artist {
+    font-size: 12px;
+    color: #ccc;
+}
+
+/* ONDAS */
+.wave {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+.wave span {
+    width: 4px;
+    height: 10px;
+    background: #ff4b7d;
+    margin: 2px;
+    animation: wave 1s infinite;
+}
+
+.wave span:nth-child(2){animation-delay: 0.2s;}
+.wave span:nth-child(3){animation-delay: 0.4s;}
+.wave span:nth-child(4){animation-delay: 0.6s;}
+.wave span:nth-child(5){animation-delay: 0.8s;}
+
+@keyframes wave {
+    0%,100% {height: 5px;}
+    50% {height: 15px;}
+}
+
+/* BARRA */
+.progress {
+    width: 100%;
+    height: 5px;
+    background: #444;
+    margin-top: 8px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 5px;
+    width: 0%;
+    background: #ff4b7d;
+}
+
+/* SLIDER */
+.slider {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    margin-top: 15px;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 100%;
+}
+
+.slides img {
+    width: 100%;
+    min-width: 100%; /* 🔥 CLAVE */
+    height: 420px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+/* BOTONES */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 50%;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+/* DOTS */
+.dots {
+    margin-top: 8px;
+}
+
+.dot {
+    height: 8px;
+    width: 8px;
+    margin: 3px;
+    display: inline-block;
+    background: #ccc;
+    border-radius: 50%;
+}
+
+.active {
+    background: #ff4b7d;
+}
+
+/* TEXTO */
+.fecha {
+    font-size: 22px;
+    color: #c97b7b;
+    margin-top: 20px;
+}
+
+.frase {
+    color: #666;
+    margin-top: 10px;
+}
+
+.teamo {
+    font-size: 32px;
+    color: #d46a6a;
+    margin: 20px 0;
+}
+
+p {
+    color: #555;
+    line-height: 1.6;
+    padding: 0 5px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<!-- PLAYER -->
+<div class="player">
+    <div class="player-top">
+        <img src="cover.avif">
+
+        <div class="info">
+            <div class="song">Tu Canción 💖</div>
+            <small class="artist">Tu nombre - Para ella</small>
+        </div>
+
+        <button onclick="toggleAudio()" id="btn">▶️</button>
+    </div>
+
+    <!-- BARRA -->
+    <div class="progress">
+        <div class="progress-bar" id="barra"></div>
+    </div>
+
+    <!-- ONDAS -->
+    <div class="wave">
+        <span></span><span></span><span></span><span></span><span></span>
+    </div>
+</div>
+
+<h3>La canción que lo empezó todo...</h3>
+
+<!-- SLIDER -->
+<div class="slider" id="slider">
+    <div class="slides" id="slides">
+        <img src="foto1.jpg">
+        <img src="foto2.jpg">
+        <img src="foto3.jpg">
+    </div>
+
+    <button class="prev" onclick="mover(-1)">❮</button>
+    <button class="next" onclick="mover(1)">❯</button>
+</div>
+
+<!-- DOTS -->
+<div class="dots">
+    <span class="dot active"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+</div>
+
+<div class="fecha">16/04/2026</div>
+
+<div class="frase">
+    Han sido los mejores <br>
+    <b>Feliz cumpleaños potona</b>
+</div>
+
+<div class="teamo">Te amo ❤️</div>
+
+<p>
+Lo nuestro no se planeó...<br><br>
+Amorcita lo siento por no estar contigo,<br> hoy cumples 18 años amorcita eres legal,asi que no me puedes denunciar potona , <br>
+amorcita cuando vuelvas nos iremos de viaje potonita asi que no estes triste yo se que a ti te gusta festejar todo en su tiempo <br>
+debes entender por motivos de distancia nose puede potona , cuando vueltas lo pasaremos super bien nos iremos de viaje ✈️ ,<br><br>
+sabes que te amo mucho de muchos amorcita , <br>
+un besito en el potito como es de costumbre te amo y te amare por siempre amor espero que no estes pensando cosas negavitas y no debes llorar por estar solita. 💖<br>
+
+</p>
+
+</div>
+
+<audio id="audio">
+    <source src="musica.mp3">
+</audio>
+
+<script>
+
+
+function toggleAudio(){
+    if(playing){
+        audio.pause();
+        document.getElementById("btn").innerHTML = "▶️";
+    } else {
+        audio.play();
+        document.getElementById("btn").innerHTML = "⏸️";
+    }
+    playing = !playing;
+}
+   
+// AUDIO
+let audio = document.getElementById("audio");
+let playing = false;
+
+function toggleAudio(){
+    if(playing){ audio.pause(); }
+    else { audio.play(); }
+    playing = !playing;
+}
+
+// PROGRESO
+audio.ontimeupdate = ()=>{
+    let porcentaje = (audio.currentTime / audio.duration) * 100;
+    document.getElementById("barra").style.width = porcentaje + "%";
+}
+
+// SLIDER
+let index = 0;
+let slides = document.getElementById("slides");
+let total = document.querySelectorAll(".slides img").length;
+let dots = document.querySelectorAll(".dot");
+
+function mover(d){
+    index += d;
+    if(index<0) index=total-1;
+    if(index>=total) index=0;
+
+    slides.style.transform = "translateX(" + (-index*100) + "%)";
+
+    dots.forEach(dot=>dot.classList.remove("active"));
+    dots[index].classList.add("active");
+}
+
+// AUTO
+setInterval(()=>{ mover(1); },4000);
+
+// SWIPE
+let startX=0;
+document.getElementById("slider").addEventListener("touchstart",(e)=>{
+    startX = e.touches[0].clientX;
+});
+
+document.getElementById("slider").addEventListener("touchend",(e)=>{
+    let endX = e.changedTouches[0].clientX;
+    if(startX - endX > 50) mover(1);
+    if(endX - startX > 50) mover(-1);
+});
+</script>
+
+</body>
+</html>
