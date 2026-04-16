@@ -192,7 +192,7 @@ p {
 
         <div class="info">
             <div class="song">Tu Canción 💖</div>
-            <small class="artist">Tu nombre - Para ella</small>
+            <small class="artist">ADAMMO - TE REGALO</small>
         </div>
 
         <button onclick="toggleAudio()" id="btn">▶️</button>
@@ -239,15 +239,26 @@ p {
 
 <div class="teamo">Te amo ❤️</div>
 
-<p>
-Lo nuestro no se planeó...<br><br>
-Amorcita lo siento por no estar contigo,<br> hoy cumples 18 años amorcita eres legal,asi que no me puedes denunciar potona , <br>
-amorcita cuando vuelvas nos iremos de viaje potonita asi que no estes triste yo se que a ti te gusta festejar todo en su tiempo <br>
-debes entender por motivos de distancia nose puede potona , cuando vueltas lo pasaremos super bien nos iremos de viaje ✈️ ,<br><br>
-sabes que te amo mucho de muchos amorcita , <br>
-un besito en el potito como es de costumbre te amo y te amare por siempre amor espero que no estes pensando cosas negavitas y no debes llorar por estar solita. 💖<br>
+<div style="text-align: center; line-height: 1.6; padding: 20px;">
+   
+    <p><i>Lo nuestro no se planeó...</i></p>
 
-</p>
+    <p>Amorcita, lo siento mucho por no poder estar contigo hoy. <br>
+    ¡Hoy cumples 18 años! Ya eres legal, así que ya no me puedes denunciar, potona. 😂</p>
+
+    <p>Amorcita, cuando vuelvas nos iremos de viaje, potonita, así que no estés triste. <br>
+    Yo sé que a ti te gusta festejar todo a su tiempo.</p>
+
+    <p>Debes entender que por motivos de distancia no se puede ahora, potona, <br>
+    pero cuando vuelvas lo pasaremos súper bien e iremos de viaje. ✈️</p>
+
+    <p>Sabes que te amo mucho, amorcita. <br>
+    Un besito en el potito, como es de costumbre. 😉 <br>
+    Te amo y te amaré por siempre, amor.</p>
+
+    <p>Espero que no estés pensando cosas negativas y no debes llorar por estar solita. 💖</p>
+       <p>"Eres mi persona favorita y mi mayor suerte. Gracias por ser tú y por dejarme quererte así, incluso a la distancia. ¡Felices 18, mi reina! ❤️"</p>
+</div>
 
 </div>
 
@@ -316,7 +327,88 @@ document.getElementById("slider").addEventListener("touchend",(e)=>{
     if(startX - endX > 50) mover(1);
     if(endX - startX > 50) mover(-1);
 });
+
+
+
 </script>
 
+<!-- BOTÓN DE CORAZÓN CON LATIDO -->
+<button id="theme-toggle" class="heart-btn">❤️</button>
+
+<style>
+    .heart-btn {
+        position: fixed; top: 20px; right: 20px; width: 50px; height: 50px;
+        border-radius: 50%; border: none; cursor: pointer;
+        background: #ff4d6d; color: white; font-size: 24px; z-index: 1000;
+        box-shadow: 0 4px 15px rgba(255, 77, 109, 0.4);
+        display: flex; align-items: center; justify-content: center;
+        animation: latido 1.2s infinite; /* Efecto latido */
+    }
+
+    @keyframes latido {
+        0% { transform: scale(1); }
+        15% { transform: scale(1.25); }
+        30% { transform: scale(1); }
+        45% { transform: scale(1.15); }
+        60% { transform: scale(1); }
+    }
+
+    /* MODO OSCURO */
+    body.dark-theme { background-color: #121212 !important; color: #f8f9fa !important; }
+    body.dark-theme div { background-color: #1e1e1e !important; color: #f8f9fa !important; }
+    body.dark-theme .heart-btn { background: #7209b7; }
+</style>
+
+<script>
+    const btn = document.getElementById('theme-toggle');
+    btn.addEventListener('click', () => {
+        document.body.classList.toggle('dark-theme');
+    });
+</script>
+
+<style>
+    /* Estilo del botón movido al lugar de la flecha */
+    .heart-btn {
+        position: absolute; /* Cambiado para que se mueva con la carta */
+        top: 15px; 
+        right: 15px; 
+        width: 40px; 
+        height: 40px;
+        border-radius: 50%; 
+        border: none; 
+        cursor: pointer;
+        background: #ff4d6d; 
+        color: white; 
+        font-size: 20px; 
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(255, 77, 109, 0.3);
+        display: flex; 
+        align-items: center; 
+        justify-content: center;
+        animation: latido 1.2s infinite;
+    }
+
+    /* Asegúrate de que el contenedor de tu carta tenga esto para que el corazón no se escape */
+    .container, .card, div[style*="background-color: white"] {
+        position: relative;
+    }
+
+    @keyframes latido {
+        0% { transform: scale(1); }
+        15% { transform: scale(1.1); }
+        30% { transform: scale(1); }
+    }
+
+    /* MODO OSCURO (TEXTO BLANCO) */
+    body.dark-theme { background-color: #121212 !important; }
+    body.dark-theme div, body.dark-theme p, body.dark-theme h2, body.dark-theme i { 
+        background-color: #1e1e1e !important; 
+        color: #ffffff !important; 
+    }
+    body.dark-theme .heart-btn { background: #7209b7; }
+</style>
+
 </body>
+
+
 </html>
